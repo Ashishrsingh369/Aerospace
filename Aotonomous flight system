@@ -1,0 +1,7 @@
+import tensorflow as tf
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(32, activation='relu', input_shape=(3,)),  # Altitude, speed, pitch
+    tf.keras.layers.Dense(1)  # Target altitude adjustment
+])
+model.compile(optimizer='adam', loss='mse')
+# Train with flight data
